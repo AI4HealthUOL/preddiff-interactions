@@ -1,8 +1,19 @@
 # *PredDiff*: Explanations and Interactions from Conditional Expectations
 
 
-This repository provides all resources to reproduce the paper:
+This repository provides resources to reproduce results from the paper:
 *PredDiff*: Explanations and Interactions from Conditional Expectations
+
+```
+@article{bluecher2022,
+title = {PredDiff: Explanations and Interactions from Conditional Expectations},
+journal = {Artificial Intelligence},
+pages = {103774},
+year = {2022},
+doi = {https://doi.org/10.1016/j.artint.2022.103774},
+author = {Stefan Blücher and Johanna Vielhaben and Nils Strodthoff},
+}
+```
 
 We provide ready-to-run jupyter notebooks, which apply *PredDiff* on different datasets
 * **Synthetic regression** (`synthetic_dataset.ipynb`): (Interaction) relevances for a regressor on the synthetic dataset discussed in the paper
