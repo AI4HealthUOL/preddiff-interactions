@@ -2,12 +2,13 @@
 
 
 This repository provides resources to reproduce results from the paper:
-*PredDiff*: Explanations and Interactions from Conditional Expectations
+[*PredDiff*: Explanations and Interactions from Conditional Expectations](https://www.sciencedirect.com/science/article/pii/S000437022200114X)
 
 ```
 @article{bluecher2022,
 title = {PredDiff: Explanations and Interactions from Conditional Expectations},
 journal = {Artificial Intelligence},
+volume = {312},
 pages = {103774},
 year = {2022},
 doi = {https://doi.org/10.1016/j.artint.2022.103774},
