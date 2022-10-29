@@ -136,7 +136,26 @@ def load_vgg16_cub200_data(n_selection=5, download=True, organize_data=True, dat
             file_download = f'{image_data_dir}download'
             # uncompress .tar.gz file, 'download'
             with tarfile.open(file_download) as file:
-                file.extractall(image_data_dir)
+                def is_within_directory(directory, target):
+                    
+                    abs_directory = os.path.abspath(directory)
+                    abs_target = os.path.abspath(target)
+                
+                    prefix = os.path.commonprefix([abs_directory, abs_target])
+                    
+                    return prefix == abs_directory
+                
+                def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+                
+                    for member in tar.getmembers():
+                        member_path = os.path.join(path, member.name)
+                        if not is_within_directory(path, member_path):
+                            raise Exception("Attempted Path Traversal in Tar File")
+                
+                    tar.extractall(path, members, numeric_owner=numeric_owner) 
+                    
+                
+                safe_extract(file, image_data_dir)
             os.remove(file_download)
 
         if organize_data is True:
